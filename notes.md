@@ -45,3 +45,15 @@ root：超级管理员的主文件夹。包括文档，下载等等
 :s/boot/booot 把光标所在行的第一个匹配到的boot改为booot  
 :s/boot/booot/g 当前行所有boot替换booot  
 :%s/boot/booot/g 全篇文档所有都替换
+
+
+# Shell 编程
+
+## 脚本常用的执行方式
+
+1. bash / sh 脚本相对路径 / 绝对路径  （相当于创建子shell）  
+2. chmod +x + 路径 ;  
+  直接输入路径执行 （相当于创建子shell） 
+3. source / . + 路径 （一行一行解析，直接执行）
+ 
+如果改了环境变量没执行，直接source 刚刚修改过的file执行
