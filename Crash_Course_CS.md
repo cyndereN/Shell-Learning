@@ -422,19 +422,249 @@ Vertex Processing, Triangle Processing, Rasterization, Fragment Processing, shad
 
 Mipmap: 纹理划分成不同大小、分辨率的图集。每次缩小1/2划分，对不同级别（物体大小）采样，远处低分辨率，近处高分辨率，更好采样
 
+# 28. 计算机网络
+
+## 28.1 局域网
+
+交换信息，共享物理资源。Ethernet
+
+## 28.2 MAC Media Across Controll Address
+
+唯一的媒体访问控制地址 Header
+
+## 28.3 CSMA
+多台电脑共享一个传输媒介 CSMA 又称载体
+
+e.g., WIFI的载体是空气，以太网是电线
+载体传输速度叫带宽
+
+## 28.4 Collision?
+
+指数退避 Exponential Backoff
+
+e.g., 检测到冲突，等1s+rand(), 2s, 4s, ...
+
+## 28.5 Collision Domain
+
+载体和其中的设备
+交换器可以减少冲突 -> Routing
+
+## 28.6 报文交换 Message Switching
+
+IP               更容错  
+"分组交换" 报文比较大，会堵塞。分成小块"数据包"  
+
+"阻塞控制": 路由器平衡负载
+
+"跳数": Hop Count 消息沿路由器跳转的次数
+
+# 29. 互联网
+
+## 29.1 电脑连接互联网
+
+PC -> LAN -> WAN -> WAN(Large)  
+　　　　　　　Isp
+
+## 29.2 IP互联网协议
+
+负责把数据包送到正确计算机
+
+IP Header + Data Payload
+
+## 29.3 UDP 
+
+负责送到程序
+
+IP Header + UDP Header + Data
+
+port checksum
+
+## 29.4 TCP
+
+所有数据必须到达
+
+- 顺序对
+- 确认无误后发ark码
+
+## 29.5 DNS域名系统
+
+| Top level domains | .org, .gov, .com, .edu |
+| ----:| ----: |
+| Second level domains | google.com, dftba.com |
+| --- | --- |
+| sub-domain of parent | | 
 
 
+## 29.6　OSI
+
+| | ||
+| ----:| ----: | ----:|
+| | Application layer | 应用程序层 |
+| | Presentation layer| 表示层 |
+| 使用UDP,TCP创建,关闭连接 | Session Layer | 会话层 |
+| UDP,TCP | Transport Layer | 传输层 |
+| 报文交换,路由 | Network Layer | 网络层 |
+| MAC,碰撞检测等 | DataLink Layer | 数据链路层 (操控物理层) |
+| 电信号,无线信号 | Physical Layer | 物理层 |
+
+# 30. 万维网
+
+## 30.1 基本单位
+万维网在互联网上运行，基本单位是页面
+
+## 30.2 超链接
+## 30.3 状态码
+## 30.4 URL Universal Resource Locater
+网页的唯一地址
+
+## 30.5 HTTP 超文本传输协议
+
+## 30.6 HTML
+## 30.7 搜索引擎
+人工编辑：目录，链接，索引 -> Yahoo
+爬虫：+不断扩张索引 + 搜索算法
+## 30.8 网络中立性
+
+# 31. 计算机安全
+
+## 31.1 保密性，完整性，可用性
+
+## 31.2 Threat Model
+
+- Who are you?
+- What should you have access to?
+
+## 31.3 Authentication 
+
+- Wha you know? (Username, password)
+- What you have?
+- What you are? (Biometric information)
+
+2-factor / multifactor authentication 
+
+## 31.4 Access control
+
+Acc: Deacribe what access each user has for every file folder and program
+
+## 31.5 Security Model 
+
+尽可能少的操作系统软件和尽量少的代码
+
+## 31.6 独立安全检查与质量验证
+
+## 31.7 Sandbox Isolation
 
 
+# 32. 黑客与攻击
 
+## 32.1 Social Engineering
+欺骗别人，让人泄密
+- fishing
+- pre texting
 
+## 32.2 Trojan Horses
+## 32.3 NAND mirroring
+重制内存，不用等待重新输入密码
 
+## 32.4 Exploit 漏洞利用
+攻击利用系统bug，疑惑的某些权限和能力
 
+- buffer overflow
+为data预留的一块内存空间  
+Bounce checking, canaries
 
+## 32.5 Code Injection
+## 32.6 Zero day vulnerability 
+软件制造者不知道有新漏洞被发现了
 
+## 32.7 Worms
+## 32.8 Botnet
 
+DDoS: Where all the computers in the botnet send a floud of dummy messages. They can knock services offline, either to force owners to pay a ransom or just to be evil
 
+# 33. Cryptography
 
+## 33.1 Cipher Encryption Decryption
+Caesar permitation cipher  
+DES, AES  
+更长密钥(128/192/256 bits) 对称快加密
+## 32.2 Key Exchange
+## 32.3 RSA
+
+# 34. 机器学习 & 人工智能
+
+## 34.1 Classification
+
+Training data -> classifier  
+Labeled data -> feature
+Decision boundaries -> COnfusion Matrix
+
+## 34.2 决策树
+## 34.3 支持向量机 任意线切分决策空间
+
+## 34.4 人工神经网路
+非统计学算法
+
+## 34.5 Strong AI, Narrow AI(Weak)
+
+## 34.6 Reinforcement Learning
+
+# 35. 计算机视觉
+
+## 35.1 颜追踪算法
+## 35.2 检验垂直边缘的算法
+Kernel/filter 卷积
+
+## 35.3 Prewitt 算子
+## 35.4 卷积神经网络
+
+# 36. NLP
+
+## 36.1 过程
+Parts of Speech -> Phrase structure rules -> Parse tree -> Language Model -> Speech Recognition
+
+## 36.2 原理
+快速傅里叶变换 波形 -> 频率
+
+## 36.3 音素 Phoenemes
+## 36.4 语音合成
+
+# 37. 机器人
+
+## 37.1 例子
+## 37.2 负反馈网络
+## 37.3 PID
+## 37.4 机器人三定律
+
+# 38. 计算机心理学
+- usability
+- 颜色强度排序
+- 分组
+- 直观功能
+- 认出 v.s. 回想
+- 情商
+
+# 39. 教育科技
+## 39.1 MOOC
+## 39.2 智能辅导系统
+## 39.3 Production Rules
+Domain Model
+
+## 39.4 贝叶斯和知识追踪
+
+## 39.5 自适应性程序
+
+# 40. 奇点，天天网，计算机的未来
+
+## 40.1 普适计算 Ubiquitous Computing
+## 40.2 Singularity
+
+2050? 计算机智能 > 所有人类  
+改造自己？
+摩尔定律接近极限？
+
+## 40.3 Job Quadrant
+![job](./assets/job.jpg)
 
 
 
